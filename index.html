@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,28 +10,39 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div class="slideshow">
-      <img
-        id="anime-city"
-        src="assets/drawn-wallpaper-city-20.jpg"
-        alt="A swanky anime-like city"
-      />
-      <img
-        id="cyber-city"
-        src="assets/Screenshot (29).png"
-        alt="a synthwave cityscape"
-      />
-      <img
-        id="turin"
-        src="assets/turin city.png"
-        alt="Turin, an Italian city"
-      />
+    <div class="mainpage">
+      <div class="slideshow">
+        <div class="slides">
+          <img
+            id="anime-city"
+            src="assets/drawn-wallpaper-city-20.jpg"
+            alt="A swanky anime-like city"
+          />
+          <img
+            id="cyber-city"
+            src="assets/Screenshot (29).png"
+            alt="a synthwave cityscape"
+          />
+          <img
+            id="turin"
+            src="assets/turin city.png"
+            alt="Turin, an Italian city"
+          />
+        </div>
+        <div class="navigation-button">
+          <span class="dot active" onclick="changeSlide(0)"></span>
+          <span class="dot" onclick="changeSlide(1)"></span>
+          <span class="dot" onclick="changeSlide(2)"></span>
+        </div>
+      </div>
+
+      <div class="pc-text-space">
+        <p>Lorem Ipsum</p>
+      </div>
+
+      <div class="phone-text-space">
+        <p>Sample Text</p>
+      </div>
     </div>
-    <div class="navigation-button">
-      <span class="dot active" onclick="changeSlide(0)"></span>
-      <span class="dot" onclick="changeSlide(1)"></span>
-      <span class="dot" onclick="changeSlide(2)"></span>
-    </div>
-    <p>Lorem Ipsum</p>
   </body>
 </html>
