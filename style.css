@@ -28,6 +28,7 @@
     margin: 0;
   }
 
+  ul,
   [role="list"] {
     list-style: none;
     margin: 0;
@@ -79,9 +80,86 @@
 }
 
 @layer base {
+  :root {
+    --clr-white: #fff;
+
+    --clr-gray-100: #ccc;
+    --clr-gray-300: #646464;
+    --clr-gray-400: #303030;
+    --clr-gray-500: #212121;
+    --clr-gray-600: #171717;
+
+    --clr-clemson-orange: #f56600;
+    --clr-clemson-purple: #522d80;
+
+    --br-100: 0.25rem;
+    --br-200: 0.5rem;
+    --br-300: 0.75rem;
+
+    --fs-300: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3.75rem;
+    --fs-1000: 3.75rem;
+
+    @media (width > 760px) {
+      --fs-500: 1.25rem;
+      --fs-600: 1.5rem;
+      --fs-700: 2rem;
+      --fs-800: 3rem;
+      --fs-900: 5rem;
+      --fs-1000: 7.5rem;
+    }
+  }
+
+  :root {
+    /*dont *need* the second root but shoutout to @media's for removing the funny text colors*/
+    --text-main: var(--clr-gray-100);
+    --text-high-contrast: var(--clr-white);
+    --text-accent: var(--clr-clemson-purple);
+
+    --background-main: var(--clr-gray-500);
+    --background-dark: var(--clr-gray-600);
+    --background-light: var(--clr-gray-400);
+    --background-highlight: var(--clr-gray-300);
+    --background-accent: var(--clr-clemson-orange);
+
+    --font-size-heading-sm: var(--fs-700);
+    --font-size-heading-rg: var(--fs-800);
+    --font-size-heading-lg: var(--fs-900);
+    --font-size-heading-xl: var(--fs-1000);
+
+    --font-size-sm: var(--fs-300);
+    --font-size-regular: var(--fs-400);
+    --font-size-md: var(--fs-500);
+    --font-size-lg: var(--fs-600);
+    --font-size-xl: var(--fs-700);
+
+    --border-radius-sm: var(--br-100);
+    --border-radius-md: var(--br-200);
+    --border-radius-lg: var(--br-300);
+  }
 }
 
 @layer layout {
+  /*wrappers exist to prevent stuff from rubbing on the screen edge*/
+  .wrapper {
+    --wrapper-max-width: 1130px;
+    &[data-width="narrow"] {
+      --wrapper-max-width: 720px;
+    }
+    &[data-width="wide"] {
+      --wrapper-max-width: 1330px;
+    }
+
+    max-width: var(--wrapper-max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    height: 100%;
+  }
 }
 
 @layer components {
@@ -100,6 +178,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    background-color: var(--background-main);
   }
 
   .slides img {
@@ -140,14 +219,14 @@
     height: 30px;
     width: 30px;
     margin: 0 10px;
-    background-color: #bbb;
+    background-color: var(--background-light);
     border-radius: 50%;
     display: inline-block;
   }
 
   .active,
   .dot:hover {
-    background-color: #717171;
+    background-color: var(--background-highlight);
   }
 
   .pc-text-space {
@@ -168,11 +247,64 @@
     }
 
     .pc-text-space {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100%;
     }
 
     .phone-text-space {
       display: none;
     }
+  }
+
+  /*
+  why not edit the html button class?
+  this is for links, it just makes them look like buttons
+  */
+  .button {
+    display: inline-flex;
+    margin: 0.75rem 0;
+    background-color: var(--background-light);
+    padding: 0.2rem 1rem;
+    text-decoration: none;
+    color: var(--text-main);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-heading-sm);
+    cursor: pointer;
+
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+      font-size 0.25s ease-in-out;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    color: var(--text-high-contrast);
+    background-color: var(--background-accent);
+    font-size: var(--font-size-heading-rg);
+  }
+}
+
+@layer utilities {
+  /*
+  any chunk of text can sit inside something with this class
+  this way it won't be seen and say, make buttons absolutely massive
+  yet a vision impaired person can use their e-reader
+  and fully understand what happens if they press said button
+  */
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .dark-background {
+    background-color: var(--background-dark);
+    height: 100%;
   }
 }
