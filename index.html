@@ -6,46 +6,57 @@
     <title>Logan Barrow</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+
+    <script>
+      /*to prevent Firefox FOUC, this must be here*/
+      let FF_FOUC_FIX;
+    </script>
   </head>
   <body>
-    <div class="mainpage">
-      <div class="slideshow">
-        <div class="slides">
-          <img
-            id="anime-city"
-            src="assets/drawn-wallpaper-city-20.jpg"
-            alt="A swanky anime-like city"
-          />
-          <img
-            id="cyber-city"
-            src="assets/Screenshot (29).png"
-            alt="a synthwave cityscape"
-          />
-          <img
-            id="turin"
-            src="assets/turin city.png"
-            alt="Turin, an Italian city"
-          />
+      <div class="mainpage">
+        <div class="slideshow">
+          <div class="slides">
+            <img
+              id="anime-city"
+              src="assets/drawn-wallpaper-city-20.jpg"
+              alt="A swanky anime-like city"
+            />
+            <img
+              id="cyber-city"
+              src="assets/Screenshot (29).png"
+              alt="a synthwave cityscape"
+            />
+            <img
+              id="turin"
+              src="assets/turin city.png"
+              alt="Turin, an Italian city"
+            />
+          </div>
+          <div class="navigation-button">
+            <span class="dot active" onclick="changeSlide(0)"></span>
+            <span class="dot" onclick="changeSlide(1)"></span>
+            <span class="dot" onclick="changeSlide(2)"></span>
+          </div>
         </div>
-        <div class="navigation-button">
-          <span class="dot active" onclick="changeSlide(0)"></span>
-          <span class="dot" onclick="changeSlide(1)"></span>
-          <span class="dot" onclick="changeSlide(2)"></span>
-        </div>
-      </div>
 
-      <div class="dark-background">
-        <div class="wrapper">
-          <div class="pc-text-space">
+        <div class="dark-background">
+          <div class="pc-text-space wrapper">
             <a href="mailto:ljbinsc@gmail.com" class="button">
               <div class="visually-hidden">click to email Logan Barrow at</div>
-              ljbinsc@gmail.com
+              Ljbinsc@gmail.com
             </a>
-            <a href="tel:+1864-934-8013" class="button">
-              <div class="visually-hidden">click to call Logan Barrow at</div>
+            <div class="button">
+              <div class="visually-hidden">Logan Barrow's cell number is:</div>
               +1 864-934-8013
+            </div>
+            <a href="assets/Logan_Barrow_Resume.pdf" class="button">
+              <div class="visually-hidden">click for Logan Barrow's</div>
+              Resume (pdf)
             </a>
             <a
               href="https://www.linkedin.com/in/logan-barrow-07197020a/"
@@ -58,10 +69,6 @@
               <div class="visually-hidden">click to go to Logan Barrow's</div>
               GitHub
             </a>
-            <a href="assets/Logan_Barrow_Resume.pdf" class="button">
-              <div class="visually-hidden">click for Logan Barrow's</div>
-              Resume (pdf)
-            </a>
             <a class="button">
               <div class="visually-hidden">
                 click for the page about Logan Barrow's
@@ -70,8 +77,44 @@
             </a>
           </div>
 
-          <div class="phone-text-space">
-            <p>Sample Text</p>
+          <div class="phone-text-space full-wrapper">
+            <a href="assets/Logan_Barrow_Resume.pdf" class="button">
+              <div class="visually-hidden">click for Logan Barrow's</div>
+              Resume (pdf)
+            </a>
+            <a href="mailto:ljbinsc@gmail.com" class="button">
+              <img
+                src="assets/email.png"
+                alt="click to email Logan Barrow at ljbinsc@gmail.com"
+              />
+            </a>
+            <a href="tel:+1864-934-8013" class="button">
+              <img
+                src="assets/phone.png"
+                alt="click to call Logan Barrow at +1 864-934-8013"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/logan-barrow-07197020a/"
+              class="button"
+            >
+              <img
+                src="assets/linkedin.png"
+                alt="click to go to Logan Barrow's linkedin"
+              />
+            </a>
+            <a href="https://github.com/Lesh-ee" class="button">
+              <img
+                src="assets/github.png"
+                alt="click to go to Logan Barrow's github"
+              />
+            </a>
+            <a class="button">
+              <div class="visually-hidden">
+                click for the page about Logan Barrow's
+              </div>
+              My Projects
+            </a>
           </div>
         </div>
       </div>

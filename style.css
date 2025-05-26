@@ -96,6 +96,8 @@
     --br-200: 0.5rem;
     --br-300: 0.75rem;
 
+    --ff-body: "Roboto", sans-serif;
+
     --fs-300: 0.875rem;
     --fs-400: 1rem;
     --fs-500: 1.125rem;
@@ -142,6 +144,16 @@
     --border-radius-md: var(--br-200);
     --border-radius-lg: var(--br-300);
   }
+
+  /*
+  setting the font & spacing for everything in the <html> (everything)
+  again with a degree of seperation between primitives
+  */
+  html {
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    scroll-padding: 2rem;
+  }
 }
 
 @layer layout {
@@ -158,7 +170,21 @@
     max-width: var(--wrapper-max-width);
     margin-inline: auto;
     padding-inline: 1rem;
-    height: 100%;
+  }
+
+  /*same as wrapper but also top and bottom*/
+  .full-wrapper {
+    --wrapper-max-width: 1130px;
+    &[data-width="narrow"] {
+      --wrapper-max-width: 720px;
+    }
+    &[data-width="wide"] {
+      --wrapper-max-width: 1330px;
+    }
+
+    max-width: var(--wrapper-max-width);
+    margin: auto;
+    padding: 1rem;
   }
 }
 
@@ -182,6 +208,7 @@
   }
 
   .slides img {
+    object-fit: cover;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -236,7 +263,32 @@
 
   .phone-text-space {
     grid-area: phone-text-space;
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "button-one button-one"
+      "button-two button-three"
+      "button-four button-five"
+      "button-six button-six";
+
+    .button:nth-child(1) {
+      grid-area: button-one;
+    }
+    .button:nth-child(2) {
+      grid-area: button-two;
+    }
+    .button:nth-child(3) {
+      grid-area: button-three;
+    }
+    .button:nth-child(4) {
+      grid-area: button-four;
+    }
+    .button:nth-child(5) {
+      grid-area: button-five;
+    }
+    .button:nth-child(6) {
+      grid-area: button-six;
+    }
   }
 
   @media (width > 760px) {
@@ -283,6 +335,19 @@
     color: var(--text-high-contrast);
     background-color: var(--background-accent);
     font-size: var(--font-size-heading-rg);
+  }
+
+  .phone-text-space .button {
+    margin: 1rem;
+    justify-content: center;
+    font-size: var(--font-size-heading-lg);
+  }
+
+  .phone-text-space .button:hover,
+  .phone-text-space .button:focus-visible {
+    color: var(--text-high-contrast);
+    background-color: var(--background-accent);
+    font-size: var(--font-size-heading-lg);
   }
 }
 
