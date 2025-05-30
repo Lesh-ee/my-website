@@ -277,7 +277,7 @@
   .dot {
     cursor: pointer;
     height: 25px;
-    width: 25x;
+    width: 25px;
     margin: 0 7px;
     background-color: var(--background-dark);
     border-radius: 50%;
