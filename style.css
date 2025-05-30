@@ -166,7 +166,7 @@
 
   body {
     font-size: var(--font-size-regular);
-    background-color: var(--background-main);
+    background-color: var(--background-dark);
     color: var(--text-main);
   }
 }
@@ -217,7 +217,7 @@
     grid-template-areas:
       "slideshow"
       "phone-text-space";
-    grid-template-rows: 33vh auto;
+    grid-template-rows: 33vh 67vh;
     grid-template-columns: 100vw;
   }
 
@@ -372,7 +372,7 @@
   }
 
   .phone-text-space .button {
-    margin: 1rem;
+    margin: auto;
     justify-content: center;
     font-size: var(--font-size-heading-rg);
     text-align: center;
@@ -450,7 +450,6 @@
 
   .dark-background {
     background-color: var(--background-dark);
-    height: 100%;
     position: relative;
   }
 
