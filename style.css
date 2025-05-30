@@ -374,7 +374,8 @@
   .phone-text-space .button {
     margin: 1rem;
     justify-content: center;
-    font-size: var(--font-size-heading-lg);
+    font-size: var(--font-size-heading-md);
+    text-align: center;
   }
 
   .phone-text-space .button:hover,
