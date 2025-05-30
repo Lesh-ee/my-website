@@ -276,9 +276,9 @@
 
   .dot {
     cursor: pointer;
-    height: 30px;
-    width: 30px;
-    margin: 0 10px;
+    height: 25px;
+    width: 25x;
+    margin: 0 7px;
     background-color: var(--background-dark);
     border-radius: 50%;
     display: inline-block;
@@ -346,6 +346,12 @@
 
     .slideshow .navigation-button {
       bottom: 2vh;
+    }
+
+    .dot {
+      height: 30px;
+      width: 30px;
+      margin: 0 10px;
     }
   }
 
