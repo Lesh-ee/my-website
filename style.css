@@ -450,6 +450,7 @@
 
   .dark-background {
     background-color: var(--background-dark);
+    height: 100%;
     position: relative;
   }
 
