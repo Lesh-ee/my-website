@@ -262,7 +262,7 @@
 
   .slideshow .navigation-button {
     position: absolute;
-    bottom: 2vh;
+    bottom: 1vh;
     left: 0;
     width: 100%;
     text-align: center;
@@ -342,6 +342,10 @@
 
     .phone-text-space {
       display: none;
+    }
+
+    .slideshow .navigation-button {
+      bottom: 2vh;
     }
   }
 
