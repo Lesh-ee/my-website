@@ -20,11 +20,7 @@
 
     <script>
       /*to prevent Firefox FOUC, this must be here*/
-      {
-        window.onbeforeunload = function () {
-          window.scrollTo(0, 0);
-        };
-      }
+      let FF_FOUC_FIX;
     </script>
   </head>
   <body>
