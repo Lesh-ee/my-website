@@ -374,7 +374,7 @@
   .phone-text-space .button {
     margin: 1rem;
     justify-content: center;
-    font-size: var(--font-size-heading-md);
+    font-size: var(--font-size-heading-rg);
     text-align: center;
   }
 
