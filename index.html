@@ -27,19 +27,34 @@
     <div class="mainpage">
       <div class="slideshow">
         <div class="slides">
-          <img src="assets/pc-img-1.png" alt="Hello! My name is Logan Barrow" />
-          <img
-            src="assets/pc-img-2.png"
-            alt="I graduated from Clemson University with a B.S. in computer science"
-          />
-          <img
-            src="assets/pc-img-3.png"
-            alt="I like strategy games, tv like futurama or fma: brotherhood, and funny or educational youtube videos"
-          />
-          <img
-            src="assets/pc-img-4.png"
-            alt="this website's layout is a little different on mobile"
-          />
+          <picture>
+            <source srcset="assets/phone-img-1.png" media="(width < 760px)" />
+            <img
+              src="assets/pc-img-1.png"
+              alt="Hello! My name is Logan Barrow"
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/phone-img-2.png" media="(width < 760px)" />
+            <img
+              src="assets/pc-img-2.png"
+              alt="I graduated from Clemson University with a B.S. in computer science"
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/phone-img-3.png" media="(width < 760px)" />
+            <img
+              src="assets/pc-img-3.png"
+              alt="I like strategy games, tv like futurama or fma: brotherhood, and funny or educational youtube videos"
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/phone-img-4.png" media="(width < 760px)" />
+            <img
+              src="assets/pc-img-4.png"
+              alt="this website's layout is a little different on mobile"
+            />
+          </picture>
         </div>
         <div class="navigation-button">
           <span class="dot active" onclick="changeSlide(0)"></span>

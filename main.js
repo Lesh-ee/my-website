@@ -1,15 +1,15 @@
-var imgs = document.querySelectorAll(".slides img");
+var pictures = document.querySelectorAll(".slides picture");
 var dots = document.querySelectorAll(".dot");
 var currentImg = 0; //index of the first image
 const interval = 5000; //duration(speed) of the slide
 
 function changeSlide(n) {
-  for (var i = 0; i < imgs.length; i++) {
-    imgs[i].style.opacity = 0;
+  for (var i = 0; i < pictures.length; i++) {
+    pictures[i].style.opacity = 0;
     dots[i].className = dots[i].className.replace(" active", "");
   }
 
-  currentImg = (currentImg + 1) % imgs.length;
+  currentImg = (currentImg + 1) % pictures.length;
 
   if (n != undefined) {
     clearInterval(timer);
@@ -17,7 +17,7 @@ function changeSlide(n) {
     currentImg = n;
   }
 
-  imgs[currentImg].style.opacity = 1;
+  pictures[currentImg].style.opacity = 1;
   dots[currentImg].className += " active";
 }
 
